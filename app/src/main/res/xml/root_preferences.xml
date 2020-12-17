@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="General"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:addStatesFromChildren="false"
+            android:entries="@array/search_engine"
+            android:entryValues="@array/search_engine"
+            android:key="searchEngine"
+            android:title="Search Engine"
+            app:defaultValue="DuckDuckGo"
+            app:iconSpaceReserved="false" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="javaScript"
+            android:title="Enable Javascript"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Privacy"
+        app:iconSpaceReserved="false">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="doNotTrack"
+            android:summary="A 'Do Not Track' request will be included with your browsing trafic"
+            android:title="Do not track"
+            app:iconSpaceReserved="false" />
+        <MultiSelectListPreference
+            android:entries="@array/clear_data"
+            android:entryValues="@array/clear_data"
+            android:key="clearData"
+            android:summary="History, Cookies and Caches"
+            android:title="Clear Data"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

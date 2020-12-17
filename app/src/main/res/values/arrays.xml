@@ -1,0 +1,15 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="search_engine">
+        <item>DuckDuckGo</item>
+        <item>Google</item>
+        <item>Bing</item>
+        <item>Yahoo!</item>
+    </string-array>
+
+    <string-array name="clear_data">
+        <item>History</item>
+        <item>Cookies</item>
+        <item>Caches</item>
+    </string-array>
+</resources>

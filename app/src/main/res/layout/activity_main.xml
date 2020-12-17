@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <com.deekshant.browser.WebContainer
+        android:id="@+id/webContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/editToolContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/currentIcon"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            app:srcCompat="@drawable/ic_web_icon" />
+
+        <TextView
+            android:id="@+id/currentURL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="TextView"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/shareURL"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="shareCurrent"
+            app:srcCompat="@drawable/ic_share" />
+
+        <ImageButton
+            android:id="@+id/copyURL"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="copyCurrent"
+            app:srcCompat="@drawable/ic_copy" />
+
+        <ImageButton
+            android:id="@+id/editURL"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="EditUrl"
+            app:srcCompat="@drawable/ic_edit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:progressBackgroundTint="?attr/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/searchContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_search_background"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/searchField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="Search or type URL"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:minHeight="50dp"
+                    android:paddingStart="24dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:id="@+id/clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="18dp"
+                    android:background="@null"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_clear" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/showTabs"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:foreground="@drawable/ic_tab_background"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:onClick="showTabs"
+                    android:text="1"
+                    android:textColor="@color/colorWhite"
+                    android:tooltipText="Tabs" />
+
+                <ImageButton
+                    android:id="@+id/forward"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:onClick="goForward"
+                    android:tint="@color/colorWhite"
+                    android:tooltipText="Forward"
+                    app:srcCompat="@drawable/ic_forward" />
+
+                <ImageButton
+                    android:id="@+id/more"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:onClick="showMenu"
+                    android:src="@drawable/ic_menu"
+                    android:tint="@color/colorWhite"
+                    android:tooltipText="Menu" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

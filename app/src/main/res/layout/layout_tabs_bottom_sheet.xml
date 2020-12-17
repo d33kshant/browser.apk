@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:maxHeight="250dp"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="75dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#5d5d5d"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tabsList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/layout_tab_row" />
+
+    <ImageButton
+        android:id="@+id/addNewTab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1C1C1C"
+        android:foreground="?attr/selectableItemBackground"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/ic_add_tab" />
+
+</LinearLayout>
