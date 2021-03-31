@@ -1,5 +1,5 @@
 # browser.apk
-Simple web-browser application starter kit for android made with Java.
+Simple web-browser application starter kit for android made with web view.
 
 ### Features
 1. Open multiple tabs
